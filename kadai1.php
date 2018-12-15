@@ -1,7 +1,12 @@
+<html>
+<title>Workflow Registration</title>
+<body>
+<p>You entered:</p>
 <?php
-/**
- * Created by PhpStorm.
- * User: s16C1
- * Date: 2018/12/15
- * Time: 15:25
- */
+$username = "nick";
+$password = "mypassword";
+echo "<p>Username = " . $username . "</p>";
+echo "<p>Password = " . $password . "</p>";
+?>
+</body>
+</html>

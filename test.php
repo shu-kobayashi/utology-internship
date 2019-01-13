@@ -5,6 +5,7 @@
  * Date: 2018/11/24
  * Time: 14:55
  */
+
 $username = '';
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $username = $_POST['username'];

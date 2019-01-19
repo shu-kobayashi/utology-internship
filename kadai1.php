@@ -38,7 +38,7 @@ while( $res = fgets( $fp)){
 <html lang="ja">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>掲示板1</title>
+    <title>掲示板</title>
 </head>
 <body>
 <?php echo $message; ?>

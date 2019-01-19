@@ -33,7 +33,6 @@ while( $res = fgets( $fp)){
     $dataArr[]= $arr;
 }
 
-
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ja">
@@ -44,9 +43,9 @@ while( $res = fgets( $fp)){
 <body>
 <?php echo $message; ?>
 <form method="post" action="">
-    名前：<input type="text" name="name" value="<?php echo $name; ?>" >
+    name：<input type="text" name="name" value="<?php echo $name; ?>" >
     <?php echo $err_msg1; ?><br>
-    コメント：<textarea  name="comment" rows="4" cols="40"><?php echo $comment; ?></textarea>
+    comment：<textarea  name="comment" rows="4" cols="40"><?php echo $comment; ?></textarea>
     <?php echo $err_msg2; ?><br>
     <br>
     <input type="submit" name="send" value="クリック" >

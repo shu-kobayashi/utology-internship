@@ -11,6 +11,7 @@ if (!file_exists($filename)) {
     touch($filename);
 }
 
+
 if ($comment === "") $err_msg2 = "コメントを入力してください";
 
 if ($err_msg1 === "" && $err_msg2 === "") {

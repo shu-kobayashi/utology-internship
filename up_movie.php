@@ -6,6 +6,4 @@ if($_FILES['file']){
 <form action="./up_movie.php" method="POST" enctype="multipart/form-data">
     <input type="file" name="file">
     <input type="submit" value="ファイルをアップロードする">
-
-
 </form>

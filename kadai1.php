@@ -18,9 +18,7 @@ if ($err_msg1 === "" && $err_msg2 === "") {
     fwrite($fp, $name . "\t" . $comment . "\n");
     $message = "書き込みに成功しました。";
 }
-
 $fp = fopen($filename, "r");
-
 $dataArr = array();
 while ($res = fgets($fp)) {
     $tmp = explode("\t", $res);

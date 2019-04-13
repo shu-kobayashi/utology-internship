@@ -7,6 +7,7 @@ try{
         echo 'エラー:', $e->getMessage().PHP_EOL;
 }
 ?>
+
 <form action="./up_movie2.php" method="POST" enctype="multipart/form-data">
     <input type="file" name="file">
     <input type="submit" value="ファイルをアップロードする">

@@ -14,6 +14,7 @@
     </div>
     <h1>新規作成</h1>
 </header>
+
 <div>
     <form action="register.html" method="post">
         <label>メールアドレス: <input type="email" name="mail"/></label><br/>

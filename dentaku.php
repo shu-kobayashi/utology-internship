@@ -24,9 +24,9 @@
           <?php echo $message; ?>
         </div>
             <form action="dentaku.php" method="post">
-                <label>一つ目の数字: <input type="text" name="no1" value="<?php echo $a; ?>"/></label><br/>
+                <label>一つ目の数字: <input type="text" name="no1" value="<?php echo htmlspecialchars($a); ?>"/></label><br/>
                 <label>+ - * /: <input type="text" name="name"/></label><br/>
-                <label>二つ目の数字: <input type="text" name="no2" value="<?php echo $b; ?>"/></label><br/>
+                <label>二つ目の数字: <input type="text" name="no2" value="<?php echo htmlspecialchars($b); ?>"/></label><br/>
                 <input type="submit" name="button_sum" value="結果">
                 <?php echo $a + $b; ?>
             </form>

@@ -2,7 +2,7 @@
     if(isset($_REQUEST['button_sum'])){
         $a = $_REQUEST['no1'];
         $b = $_REQUEST['no2'];
-        //$c = $a + $b
+        $c = $a + $b
     }else{
         echo "数字の入力をお願いします";
     }
@@ -27,6 +27,7 @@
                 <label>一つ目の数字: <input type="text" name="no1" value="<?php echo htmlspecialchars($a); ?>"/></label><br/>
                 <label>+ - * /: <input type="text" name="name"/></label><br/>
                 <label>二つ目の数字: <input type="text" name="no2" value="<?php echo htmlspecialchars($b); ?>"/></label><br/>
+                <span><?php echo htmlspecialchars($c); ?></span>
                 <input type="submit" name="button_sum" value="結果">
                 <?php echo $a + $b; ?>
             </form>

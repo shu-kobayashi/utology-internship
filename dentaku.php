@@ -1,7 +1,10 @@
 <?php
-    $a = $_REQUEST['no1'];
-    $b = $_REQUEST['no2'];
-    $c = $a + $b 
+    if(isset($_REQUEST['button_sum'])){
+        $a = $_REQUEST['no1'];
+        $b = $_REQUEST['no2'];
+        //$c = $a + $b
+    }
+    //$c = $a + $b
     ?>
 
 <!DOCTYPE html>
@@ -22,8 +25,8 @@
                 <label>一つ目の数字: <input type="text" name="no1" value="<?php echo $a; ?>"/></label><br/>
                 <label>+ - * /: <input type="text" name="name"/></label><br/>
                 <label>二つ目の数字: <input type="text" name="no2" value="<?php echo $b; ?>"/></label><br/>
-                <input type="submit" value="結果">
-                <?php echo $c; ?>
+                <input type="submit" name="button_sum" value="結果">
+                <?php echo $a + $b; ?>
             </form>
         </div>
     </body>

@@ -1,7 +1,7 @@
 <?php
     $a = $_REQUEST['no1'];
-    $a = $_REQUEST['no2'];
-    $c = $a + $b + 11
+    $b = $_REQUEST['no2'];
+    $c = $a + $b 
     ?>
 
 <!DOCTYPE html>

@@ -2,7 +2,7 @@
     if(isset($_REQUEST['button_sum'])){
         $a = $_REQUEST['no1'];
         $b = $_REQUEST['no2'];
-        $c = $a + $b
+        $c = $a + $b;
     }else{
         echo "数字の入力をお願いします";
     }

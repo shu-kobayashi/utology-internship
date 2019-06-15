@@ -3,6 +3,8 @@
         $a = $_REQUEST['no1'];
         $b = $_REQUEST['no2'];
         //$c = $a + $b
+    }else{
+        echo "数字の入力をお願いします";
     }
     //$c = $a + $b
     ?>

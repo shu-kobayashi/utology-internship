@@ -1,3 +1,9 @@
+<?php
+    $a = $_REQUEST['no1'];
+    $a = $_REQUEST['no2'];
+    $c = $a + $b
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

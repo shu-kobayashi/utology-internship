@@ -1,6 +1,8 @@
 <?php
     if(isset($_REQUEST['button_sum'])){
+
         $a = $_REQUEST['no1'];
+        $s = $_REQUEST['name'];
         $b = $_REQUEST['no2'];
         $c = $a + $b;
     }else{
@@ -29,7 +31,7 @@
                 <label>二つ目の数字: <input type="text" name="no2" value="<?php echo htmlspecialchars($b); ?>"/></label><br/>
                 <span><?php echo htmlspecialchars($c); ?></span>
                 <input type="submit" name="button_sum" value="結果">
-                <?php echo $a + $b; ?>
+                <?php echo $s; ?>
             </form>
         </div>
     </body>

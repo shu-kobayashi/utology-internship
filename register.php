@@ -21,7 +21,8 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     $mail = $_POST['mail'];
     $password = $_POST['password'];
 
-    $sql = 'INSERT INTO `users` (name, mail, password, created, modified)';
+    
+    $sql = 'INSERT INTO `board` (name, mail, password, created, modified)';
     $sql .= ' VALUES (:name, :mail, :password, NOW(), NOW())';
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':name', $name, \PDO::PARAM_STR);

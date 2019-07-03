@@ -2,21 +2,19 @@
 session_start();
 
 $message = '';
-try {   
+try {
     $DBSERVER = 'localhost';
-    $DBUSER = 'board';
-    $DBPASSWD = 'boardpw';
-    $DBNAME = 'board';
-
+    $DBUSER = 'shu';
+    $DBPASSWD = '';
+    $DBNAME = 'sampledb';
     $dsn = 'mysql:'
         . 'host=' . $DBSERVER . ';'
         . 'dbname=' . $DBNAME . ';'
         . 'charset=utf8';
     $pdo = new PDO($dsn, $DBUSER, $DBPASSWD, array(PDO::ATTR_EMULATE_PREPARES => false));
 } catch (Exception $e) {
-    $message = "接続に失敗しました: {$e->getMessage()}";
+    $message = "接続に失敗: {$e->getMessage()}";
 }
-
 // 入力が全て入っていたらユーザーを作成する
 if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password'])) {
     $name = $_POST['name'];
@@ -31,16 +29,15 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     $stmt->bindValue(':password', $password, \PDO::PARAM_STR);
     $result = $stmt->execute();
     if($result) {
-        $message = 'ユーザーを作成しました';
+        $message = 'ユーザーを作成';
         $_SESSION['id'] = $pdo->lastInsertId();
         $_SESSION['name'] = $name;
         $_SESSION['mail'] = $mail;
         $_SESSION['password'] = $password;
     } else {
-        $message = '登録に失敗しました';
+        $message = '登録に失敗';
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

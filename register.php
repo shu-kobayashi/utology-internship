@@ -7,7 +7,6 @@ try {
     $DBUSER = 'shu';
     $DBPASSWD = '';
     $DBNAME = 'sampledb';
-
     $dsn = 'mysql:'
         . 'host=' . $DBSERVER . ';'
         . 'dbname=' . $DBNAME . ';'
@@ -16,7 +15,6 @@ try {
 } catch (Exception $e) {
     $message = "接続に失敗: {$e->getMessage()}";
 }
-
 // 入力が全て入っていたらユーザーを作成する
 if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password'])) {
     $name = $_POST['name'];

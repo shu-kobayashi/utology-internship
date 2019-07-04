@@ -13,7 +13,7 @@ try {
         . 'charset=utf8';*/
     $dsn = 'mysql:dbname=sampledb;host=localhost;charset=utf8';
     //$pdo = new PDO($dsn, $DBUSER, $DBPASSWD, array(PDO::ATTR_EMULATE_PREPARES => false));
-    $pdo = new PDO($dsn, $DBUSER, $DBPASSWD, array(PDO::ATTR_EMULATE_PREPARES => false));
+    $pdo = new PDO($dsn, $DBUSER, $DBPASSWD);
 } catch (Exception $e) {
     $message = "接続に失敗: {$e->getMessage()}";
 }

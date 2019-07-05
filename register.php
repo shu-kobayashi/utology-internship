@@ -28,11 +28,9 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     $sql .= ' VALUES (:name, :mail, :password)';
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':name', $name, \PDO::PARAM_STR);
-    //echo $stmt;
     $stmt->bindValue(':mail', $mail, \PDO::PARAM_STR);
     $stmt->bindValue(':password', $password, \PDO::PARAM_STR);
     $result = $stmt->execute();
-    //echo $result;
     if ($result) {
         $message = 'ユーザーを作成';
         //$_SESSION['id'] = $pdo->lastInsertId();
@@ -41,6 +39,7 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
         $_SESSION['password'] = $password;
     } else {
         $message = '登録に失敗';
+        echo $result;
     }
 }else{
     $message_x = "中身がないです";

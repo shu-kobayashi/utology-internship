@@ -27,9 +27,12 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     $sql = "INSERT INTO makeuser (name, mail, password)";
     $sql .= ' VALUES (:name, :mail, :password)';
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':name', $name, \PDO::PARAM_STR);
-    $stmt->bindValue(':mail', $mail, \PDO::PARAM_STR);
-    $stmt->bindValue(':password', $password, \PDO::PARAM_STR);
+    //$stmt->bindValue(':name', $name, \PDO::PARAM_STR);
+    //$stmt->bindValue(':mail', $mail, \PDO::PARAM_STR);
+    //$stmt->bindValue(':password', $password, \PDO::PARAM_STR);
+    $stmt->bindValue(':name', $name);
+    $stmt->bindValue(':mail', $mail);
+    $stmt->bindValue(':password', $password);
     $result = $stmt->execute();
     if ($result) {
         $message = 'ユーザーを作成';

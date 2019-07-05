@@ -24,7 +24,7 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     $password = $_POST['password'];
     //$sql = "INSERT INTO board (name, mail, password, created, modified)";
     //$sql .= ' VALUES (:name, :mail, :password, NOW(), NOW())';
-    $sql = "INSERT INTO makeuser (name, mail, password)";
+    $sql = "INSERT INTO makeuser (name, email, password)";
     $sql .= ' VALUES (:name, :mail, :password)';
     $stmt = $pdo->prepare($sql);
     //$stmt->bindValue(':name', $name, \PDO::PARAM_STR);
@@ -33,6 +33,7 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     $stmt->bindValue(':name', $name);
     $stmt->bindValue(':mail', $mail);
     $stmt->bindValue(':password', $password);
+    //下の行で行を追加すると思われる
     $result = $stmt->execute();
     if ($result) {
         $message = 'ユーザーを作成';

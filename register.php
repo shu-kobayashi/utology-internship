@@ -6,7 +6,7 @@ try {
     $DBSERVER = 'localhost';
     $DBUSER = 'board';
     $DBPASSWD = 'boardpw';
-    $DBNAME = 'sampledb';
+    $DBNAME = 'board';
     $dsn = 'mysql:'
         . 'host=' . $DBSERVER . ';'
         . 'dbname=' . $DBNAME . ';'

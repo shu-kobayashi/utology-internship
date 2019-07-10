@@ -22,7 +22,7 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     $name = $_POST['name'];
     $mail = $_POST['mail'];
     $password = $_POST['password'];
-    $sql = "INSERT INTO board (name, mail, password, created, modified)";
+    $sql = "INSERT INTO boards (name, mail, password, created, modified)";
     $sql .= ' VALUES (:name, :mail, :password, NOW(), NOW())';
     //$sql = "INSERT INTO makeuser (name, email, password)";
     //$sql .= ' VALUES (:name, :mail, :password)';

@@ -35,6 +35,7 @@ if(!empty($_POST['mail']) && !empty($_POST['password'])) {
     $user = $stmt->fetch();
     if(!empty($user)) {
         $message = 'ログインしました';
+        echo
         $_SESSION['name'] = $user['name'];
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['password'] = $user['password'];

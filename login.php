@@ -4,20 +4,18 @@ session_start();
 $message = '';
 try {
     $DBSERVER = 'localhost';
-    $DBUSER = 'shu';
-    $DBPASSWD = '';
-    /*
-    $DBNAME = 'board';
+    $DBUSER = 'board';
+    $DBPASSWD = 'boardpw';
+    $DBNAME = 'boards';
 
     $dsn = 'mysql:'
         . 'host=' . $DBSERVER . ';'
         . 'dbname=' . $DBNAME . ';'
         . 'charset=utf8';
     $pdo = new PDO($dsn, $DBUSER, $DBPASSWD, array(PDO::ATTR_EMULATE_PREPARES => false));
-    */
-    $dsn = 'mysql:dbname=sampledb;host=localhost;charset=utf8';
+    //$dsn = 'mysql:dbname=sampledb;host=localhost;charset=utf8';
     //$pdo = new PDO($dsn, $DBUSER, $DBPASSWD, array(PDO::ATTR_EMULATE_PREPARES => false));
-    $pdo = new PDO($dsn, $DBUSER, $DBPASSWD);
+    //$pdo = new PDO($dsn, $DBUSER, $DBPASSWD);
 } catch (Exception $e) {
     $message = "接続に失敗しました: {$e->getMessage()}";
 }
@@ -27,12 +25,12 @@ if(!empty($_POST['mail']) && !empty($_POST['password'])) {
     $mail = $_POST['mail'];
     $password = $_POST['password'];
 
-    $sql = 'SELECT * FROM makeuser WHERE email = :mail AND password = :password';
+    $sql = 'SELECT * FROM users WHERE mail = :mail AND password = :password';
     $stmt = $pdo->prepare($sql);
-    //$stmt->bindValue(':mail', $mail, \PDO::PARAM_STR);
-    //$stmt->bindValue(':password', $password, \PDO::PARAM_STR);
-    $stmt->bindValue(':mail', $mail);
-    $stmt->bindValue(':password', $password);
+    $stmt->bindValue(':mail', $mail, \PDO::PARAM_STR);
+    $stmt->bindValue(':password', $password, \PDO::PARAM_STR);
+    //$stmt->bindValue(':mail', $mail);
+    //$stmt->bindValue(':password', $password);
     $stmt->execute();
     $user = $stmt->fetch();
     if(!empty($user)) {

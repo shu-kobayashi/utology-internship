@@ -27,8 +27,9 @@ if(!empty($_POST['mail']) && !empty($_POST['password'])) {
     $mail = $_POST['mail'];
     $password = $_POST['password'];
 
-    $sql = 'SELECT * FROM  WHERE email = :mail AND password = :password';
+    $sql = 'SELECT * FROM  WHERE email = :mail'; //AND password = :password';
     $stmt = $pdo->prepare($sql);
+    echo $sql;
     //$stmt->bindValue(':mail', $mail, \PDO::PARAM_STR);
     //$stmt->bindValue(':password', $password, \PDO::PARAM_STR);
     $stmt->bindValue(':mail', $mail);

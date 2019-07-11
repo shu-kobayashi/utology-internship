@@ -28,7 +28,7 @@ if(!empty($_POST['title'])) {
     if($result) {
         $message = '掲示板を作成しました';
         // 作成したら掲示板ページにリダイレクトします
-        header('Location: /board/board.php?id=' . $pdo->lastInsertId());
+        header('Location: /utology-internship/board.php?id=' . $pdo->lastInsertId());
         exit;
     } else {
         $message = '作成に失敗しました';

@@ -36,6 +36,7 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     //下の行で行を追加すると思われる
     $result = $stmt->execute();
     if ($result) {
+        echo $result;
         $message = 'ユーザーを作成';
         $_SESSION['id'] = $pdo->lastInsertId();
         $_SESSION['name'] = $name;
@@ -45,10 +46,8 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
         $message = '登録に失敗';
         echo $result;
     }
-}else{
-    $message_x = "中身がないです";
-    echo $message_x;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

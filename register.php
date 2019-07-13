@@ -35,8 +35,8 @@ if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['password']
     //$stmt->bindValue(':password', $password);
     //下の行で行を追加すると思われる
     $result = $stmt->execute();
-    if ($result) {
-        echo $result;
+    if ($result) {  //$result変数の中身は1 or 0
+        echo $stmt;
         $message = 'ユーザーを作成';
         $_SESSION['id'] = $pdo->lastInsertId();
         $_SESSION['name'] = $name;

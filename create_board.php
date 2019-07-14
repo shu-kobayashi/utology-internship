@@ -24,6 +24,7 @@ if(!empty($_POST['title'])) {
     $sql .= ' VALUES (:title, NOW(), NOW())';
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':title', $title, \PDO::PARAM_STR);
+    $commentList = $stmt->fetchAll();
     $result = $stmt->execute();
     if($result) {
         $message = '掲示板を作成しました';
@@ -60,6 +61,12 @@ if(!empty($_POST['title'])) {
         <label>タイトル: <input type="text" name="title"/></label><br/>
         <input type="submit" value="掲示板作成">
     </form>
+    <h3>作成した掲示板一覧</h3>
+    <?php
+        foreach ($commentList as $comment) {
+                echo "<li>{$comment['comment']}</li>";
+            }
+    ?>
 </div>
 </body>
 </html>

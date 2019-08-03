@@ -88,7 +88,7 @@ catch(PDOException $e){
 </form>
 <?php
 //DBから取得して表示する．
-$sql = "SELECT * FROM media ORDER BY id;";
+$sql = "SELECT * FROM medias ORDER BY id;";
 $stmt = $pdo->prepare($sql);
 $stmt -> execute();
 while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){

@@ -28,5 +28,3 @@ try {
     } catch (Exception $e) {
     $message = "接続に失敗しました: {$e->getMessage()}";
 }
-
-?>

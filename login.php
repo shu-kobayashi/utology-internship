@@ -24,7 +24,6 @@ try {
 if(!empty($_POST['mail']) && !empty($_POST['password'])) {
     $mail = $_POST['mail'];
     $password = $_POST['password'];
-
     $sql = 'SELECT * FROM users WHERE mail = :mail AND password = :password';
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':mail', $mail, \PDO::PARAM_STR);
@@ -35,10 +34,11 @@ if(!empty($_POST['mail']) && !empty($_POST['password'])) {
     $user = $stmt->fetch();
     if(!empty($user)) {
         $message = 'ログインしました';
-        echo
         $_SESSION['name'] = $user['name'];
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['password'] = $user['password'];
+        header("Location: create_board.php");   //ログインできていたらcreate_board.phpに飛ぶはず...
+        exit;
     } else {
         $message = 'ログインに失敗しました';
     }
@@ -73,3 +73,4 @@ if(!empty($_POST['mail']) && !empty($_POST['password'])) {
 </div>
 </body>
 </html>
+
